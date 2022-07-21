@@ -375,3 +375,31 @@ const pro7 = new Computer(2, 5, 6, 299, 55);
 console.log(Computer.giveBackTheExpensiveOrTheCheap("",pro4,pro5,pro6,pro7))
 pro4.printDataComputer();
 console.log(pro4.printIforrded());
+
+
+
+class ComputerScreen extends Product {
+    numberOfOrders: number;
+    resolution: number;
+    constructor(width: number, length: number, weight: number, price: number, numbeOfOrders: number, resolution: number) {
+        super(width, length, weight, price);
+        this.numberOfOrders = numbeOfOrders;
+        this.resolution = resolution;
+    }
+    printDataComputerScreen(): string {
+        return `${this.width} ${this.length} ${this.weight} ${this.price} ${this.numberOfOrders} ${this.resolution} `
+    }
+    printIforrded() {
+        if (this.getOrder) {
+            return `ordred ${this.numberOfOrders}`;
+        }
+        return `need ordred`;
+    }
+}
+
+const computerScreens: ComputerScreen = new ComputerScreen(22, 55, 33, 15, 65, 85);
+const computerScreens1: ComputerScreen = new ComputerScreen(22, 55, 33, 125, 65, 85);
+const computerScreens2: ComputerScreen = new ComputerScreen(22, 55, 33, 35, 65, 85);
+console.log(computerScreens.printDataComputerScreen());
+console.log(computerScreens.printIforrded());
+console.log(ComputerScreen.giveBackTheExpensiveOrTheCheap("",computerScreens,computerScreens1,computerScreens2))
