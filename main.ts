@@ -355,12 +355,23 @@ class Computer extends Product {
         super(width, length, weight, price);
         this.powerSupply = powerSupply;
     }
-    printDataComputer(){
+    printDataComputer() {
         console.log(`${this.width} ${this.length} ${this.weight} ${this.price} ${this.powerSupply}`);
     }
-    
+    printIforrded() {
+        if (this.getOrder) {
+            return `ordred`;
+        }
+        return `need ordred`;
+    }
 }
 
-const pro4 = new Computer(2, 5, 6, 299,55);
+const pro4 = new Computer(2, 5, 6, 299, 55);
+const pro5 = new Computer(2, 5, 6, 299, 55);
+const pro6 = new Computer(2, 5, 6, 300, 55);
+const pro7 = new Computer(2, 5, 6, 299, 55);
 
-pro4.printDataComputer()
+
+console.log(Computer.giveBackTheExpensiveOrTheCheap("",pro4,pro5,pro6,pro7))
+pro4.printDataComputer();
+console.log(pro4.printIforrded());
